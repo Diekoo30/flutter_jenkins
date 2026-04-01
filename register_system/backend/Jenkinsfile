@@ -11,11 +11,11 @@ pipeline {
     stages {
         stage('Checkout Repo') {
             steps {
-                git 'https://github.com/Diekoo30/flutter_jenkins.git'
+                git branch: 'main', url: 'https://github.com/Diekoo30/flutter_jenkins.git'
             }
         }
 
-        stage('Build Flutter') {
+        stage('Build Flutter APK') {
             steps {
                 dir('register_system/backend/flutter_app') {
                     sh 'flutter doctor -v'
